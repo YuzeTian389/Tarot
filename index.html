@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>星幕塔罗</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="hero" aria-label="星幕塔罗">
+        <div class="hero-copy">
+          <p class="eyebrow">Arcana Reading</p>
+          <h1>星幕塔罗</h1>
+          <p class="lead">在月相、星盘与牌阵之间，抽取当下最需要被看见的讯息。</p>
+        </div>
+        <div class="orbital" aria-hidden="true">
+          <span class="ring ring-a"></span>
+          <span class="ring ring-b"></span>
+          <span class="moon"></span>
+          <span class="star s1"></span>
+          <span class="star s2"></span>
+          <span class="star s3"></span>
+          <span class="star s4"></span>
+          <span class="star s5"></span>
+          <span class="star s6"></span>
+          <span class="star s7"></span>
+        </div>
+      </section>
+
+      <section class="reader-layout">
+        <aside class="control-panel">
+          <div class="field">
+            <label for="question">你的问题</label>
+            <textarea id="question" rows="4" placeholder="例如：我近期需要留意什么？"></textarea>
+          </div>
+
+          <div class="field">
+            <span class="label">问题类型</span>
+            <div class="topic-tabs" role="tablist" aria-label="选择问题类型">
+              <button class="active" data-topic="general">综合</button>
+              <button data-topic="love">感情</button>
+              <button data-topic="career">事业</button>
+              <button data-topic="wealth">财运</button>
+              <button data-topic="study">学业</button>
+              <button data-topic="growth">成长</button>
+            </div>
+          </div>
+
+          <div class="field">
+            <span class="label">牌阵</span>
+            <div class="spread-tabs" role="tablist" aria-label="选择牌阵">
+              <button class="active" data-spread="three">三张牌</button>
+              <button data-spread="single">单张牌</button>
+              <button data-spread="cross">十字牌</button>
+            </div>
+          </div>
+
+          <button id="drawBtn" class="draw-button" type="button">开始抽牌</button>
+
+          <div class="moon-phase">
+            <span>今日氛围</span>
+            <strong>上弦月 · 适合厘清选择</strong>
+          </div>
+        </aside>
+
+        <section class="reading-stage" aria-label="抽牌区域">
+          <div class="stage-head">
+            <div>
+              <p class="eyebrow">Spread Table</p>
+              <h2 id="spreadTitle">三张牌阵</h2>
+            </div>
+            <span id="ritualStatus" class="ritual-status">等待洗牌</span>
+          </div>
+
+          <div class="ritual-table">
+            <div class="deck-stack" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <div id="cardSpread" class="spread-board spread-three"></div>
+          </div>
+        </section>
+
+        <aside class="result-panel">
+          <p class="eyebrow">Reading</p>
+          <h2>解读摘要</h2>
+          <div id="resultText" class="result-text">
+            <p>输入问题后点击抽牌，系统会先搭起三张牌的基础解读。</p>
+          </div>
+          <div class="ai-panel">
+            <button id="aiBtn" class="ai-button" type="button" disabled>DeepSeek 智能分析</button>
+            <div id="aiResult" class="ai-result">
+              <p>抽牌完成后可调用 AI 生成综合分析。</p>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <details class="deck-preview" aria-label="牌库预览">
+        <summary class="section-head">
+          <span>
+            <p class="eyebrow">Tarot Deck · 78 Cards</p>
+            <h2>完整塔罗牌库</h2>
+          </span>
+          <strong>展开牌库</strong>
+        </summary>
+        <div id="deckList" class="deck-list"></div>
+      </details>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

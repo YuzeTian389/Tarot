@@ -1,0 +1,7 @@
+{
+  "name": "tarot-web",
+  "private": true,
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js"
+  }
+}
