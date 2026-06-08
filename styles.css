@@ -1074,55 +1074,101 @@ textarea:focus {
   }
 
   .spread-slot {
-    width: 124px;
-    height: 200px;
+    width: 96px;
+    height: 158px;
+  }
+
+  .slot-label {
+    top: -24px;
+    padding: 4px 8px;
+    font-size: 12px;
   }
 
   .card-art {
-    height: 92px;
-    margin-bottom: 8px;
+    height: 72px;
+    margin-bottom: 6px;
   }
 
-  .card-art::before {
-    font-size: 58px;
-  }
-
-  .tarot-card h3 {
-    margin-bottom: 5px;
-    font-size: 15px;
-  }
-
-  .tarot-card p {
+  .card-art::after {
+    top: 0;
+    min-width: 30px;
+    padding: 2px 7px;
     font-size: 11px;
   }
 
-  .spread-three .spread-slot:nth-child(1),
-  .spread-cross .spread-slot:nth-child(2) {
-    --x: 28%;
-    --y: 28%;
+  .card-art::before {
+    inset: 10px;
+    font-size: 46px;
   }
 
-  .spread-three .spread-slot:nth-child(2),
-  .spread-single .spread-slot:nth-child(1),
+  .tarot-card h3 {
+    margin-bottom: 4px;
+    font-size: 13px;
+  }
+
+  .tarot-card p {
+    font-size: 10px;
+    line-height: 1.25;
+  }
+
+  .spread-three .spread-slot:nth-child(1) {
+    --x: 20%;
+    --y: 48%;
+  }
+
+  .spread-three .spread-slot:nth-child(2) {
+    --x: 50%;
+    --y: 48%;
+  }
+
+  .spread-three .spread-slot:nth-child(3) {
+    --x: 80%;
+    --y: 48%;
+  }
+
+  .spread-single .spread-slot:nth-child(1) {
+    --x: 50%;
+    --y: 50%;
+  }
+
   .spread-cross .spread-slot:nth-child(1) {
-    --x: 72%;
-    --y: 40%;
+    --x: 50%;
+    --y: 52%;
   }
 
-  .spread-three .spread-slot:nth-child(3),
+  .spread-cross .spread-slot:nth-child(2) {
+    --x: 20%;
+    --y: 52%;
+  }
+
   .spread-cross .spread-slot:nth-child(3) {
-    --x: 28%;
-    --y: 56%;
+    --x: 80%;
+    --y: 52%;
   }
 
   .spread-cross .spread-slot:nth-child(4) {
-    --x: 72%;
-    --y: 68%;
+    --x: 50%;
+    --y: 22%;
   }
 
   .spread-cross .spread-slot:nth-child(5) {
     --x: 50%;
-    --y: 84%;
+    --y: 82%;
+  }
+
+  .deck-item::after {
+    position: fixed;
+    left: 50%;
+    top: auto;
+    bottom: 18px;
+    width: calc(100vw - 32px);
+    max-height: 42vh;
+    overflow: auto;
+    transform: translateX(-50%) translateY(8px);
+  }
+
+  .deck-item:hover::after {
+    transform: translateX(-50%) translateY(0);
   }
 
 }
